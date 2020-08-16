@@ -61,6 +61,7 @@ public class LandingPage extends AppCompatActivity {
 
         requestInternetPermission();
 
+
         mGoodreadRequest = new GoodreadRequest(getString(R.string.GR_API_Key), this);
 
         FloatingActionButton fab = findViewById(R.id.fab);

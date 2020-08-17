@@ -72,8 +72,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:progressTint="@color/MediumVioletRed"
-                            android:secondaryProgressTint="@color/Purple"/>
+                            android:progressTint="@color/SpringGreen"
+                            android:secondaryProgressTint="@color/SeaGreen"/>
 
                         <TextView
                             android:id="@+id/ratingCount"
@@ -149,8 +149,8 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_keyboard_arrow_down_24px"
                 android:textAlignment="viewStart"
-                android:textOff="More Information"
-                android:textOn="More Information"
+                android:textOff="READ MORE"
+                android:textOn="READ MORE"
                 android:checked="true"/>
 
             <LinearLayout

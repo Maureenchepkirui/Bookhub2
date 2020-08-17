@@ -31,8 +31,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:hint="Example application"
-                android:textSize="17sp"
-                android:textColor="@color/secondaryDarkColor"/>
+                android:textColor="@color/secondaryDarkColor"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/secondLine"

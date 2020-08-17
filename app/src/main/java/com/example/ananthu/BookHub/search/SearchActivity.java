@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3.search;
+package com.example.ananthu.BookHub.search;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,16 +9,16 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.ananthu.getbooks3.InternalStorage;
-import com.example.ananthu.getbooks3.R;
-import com.example.ananthu.getbooks3.adapters.BookRecyclerViewAdapter;
-import com.example.ananthu.getbooks3.model.Book;
-import com.example.ananthu.getbooks3.network.GoodreadRequest;
+import com.example.ananthu.BookHub.InternalStorage;
+import com.example.ananthu.BookHub.R;
+import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
+import com.example.ananthu.BookHub.model.Book;
+import com.example.ananthu.BookHub.network.GoodreadRequest;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity implements com.example.ananthu.getbooks3.search.SearchView {
+public class SearchActivity extends AppCompatActivity implements com.example.ananthu.BookHub.search.SearchView {
     private static final String TAG = SearchActivity.class.getName();
 
     private List<Book> books = new ArrayList<>();

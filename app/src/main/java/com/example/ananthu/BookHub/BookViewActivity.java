@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3;
+package com.example.ananthu.BookHub;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,9 +17,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.example.ananthu.getbooks3.adapters.AuthorRecyclerViewAdapter;
-import com.example.ananthu.getbooks3.model.Author;
-import com.example.ananthu.getbooks3.model.Book;
+import com.example.ananthu.BookHub.adapters.AuthorRecyclerViewAdapter;
+import com.example.ananthu.BookHub.model.Author;
+import com.example.ananthu.BookHub.model.Book;
 import com.squareup.picasso.Picasso;
 
 

@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3.adapters;
+package com.example.ananthu.BookHub.adapters;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -14,10 +14,10 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.ananthu.getbooks3.BookViewActivity;
-import com.example.ananthu.getbooks3.R;
-import com.example.ananthu.getbooks3.model.Author;
-import com.example.ananthu.getbooks3.model.Book;
+import com.example.ananthu.BookHub.BookViewActivity;
+import com.example.ananthu.BookHub.R;
+import com.example.ananthu.BookHub.model.Author;
+import com.example.ananthu.BookHub.model.Book;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

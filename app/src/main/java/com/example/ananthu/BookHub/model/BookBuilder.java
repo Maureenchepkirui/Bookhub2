@@ -1,8 +1,8 @@
-package com.example.ananthu.getbooks3.model;
+package com.example.ananthu.BookHub.model;
 
 import android.util.Log;
 
-import com.example.ananthu.getbooks3.network.SuccessFailedCallback;
+import com.example.ananthu.BookHub.network.SuccessFailedCallback;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -17,7 +17,7 @@ public class BookBuilder {
     /**
      * Parse info from the XML string containing book details
      *
-     * @param xmlString XML response from {@link com.example.ananthu.getbooks3.network.GoodreadRequest#getBook(Integer, SuccessFailedCallback)} API
+     * @param xmlString XML response from {@link com.example.ananthu.BookHub.network.GoodreadRequest#getBook(Integer, SuccessFailedCallback)} API
      * @return A {@link Book} Object
      */
     public static Book getBookFromXML(String xmlString) {

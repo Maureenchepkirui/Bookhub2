@@ -1,10 +1,10 @@
-package com.example.ananthu.getbooks3;
+package com.example.ananthu.BookHub;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.example.ananthu.getbooks3.model.Author;
-import com.example.ananthu.getbooks3.model.Book;
+import com.example.ananthu.BookHub.model.Author;
+import com.example.ananthu.BookHub.model.Book;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3.model;
+package com.example.ananthu.BookHub.model;
 
 import java.io.Serializable;
 import java.util.List;

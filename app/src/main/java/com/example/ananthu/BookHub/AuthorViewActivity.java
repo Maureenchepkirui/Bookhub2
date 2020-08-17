@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3;
+package com.example.ananthu.BookHub;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,14 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.example.ananthu.getbooks3.adapters.BookRecyclerViewAdapter;
-import com.example.ananthu.getbooks3.model.Author;
-import com.example.ananthu.getbooks3.model.AuthorBuilder;
-import com.example.ananthu.getbooks3.model.Book;
-import com.example.ananthu.getbooks3.model.BookBuilder;
-import com.example.ananthu.getbooks3.network.GoodreadRequest;
-import com.example.ananthu.getbooks3.network.SuccessFailedCallback;
-import com.example.ananthu.getbooks3.util.CircleTransform;
+import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
+import com.example.ananthu.BookHub.model.Author;
+import com.example.ananthu.BookHub.model.AuthorBuilder;
+import com.example.ananthu.BookHub.model.Book;
+import com.example.ananthu.BookHub.model.BookBuilder;
+import com.example.ananthu.BookHub.network.GoodreadRequest;
+import com.example.ananthu.BookHub.network.SuccessFailedCallback;
+import com.example.ananthu.BookHub.util.CircleTransform;
 import com.squareup.picasso.Picasso;
 
 

@@ -1,12 +1,12 @@
-package com.example.ananthu.getbooks3.search;
+package com.example.ananthu.BookHub.search;
 
 import android.util.Log;
 
-import com.example.ananthu.getbooks3.InternalStorage;
-import com.example.ananthu.getbooks3.model.Book;
-import com.example.ananthu.getbooks3.model.BookBuilder;
-import com.example.ananthu.getbooks3.network.GoodreadRequest;
-import com.example.ananthu.getbooks3.network.SuccessFailedCallback;
+import com.example.ananthu.BookHub.InternalStorage;
+import com.example.ananthu.BookHub.model.Book;
+import com.example.ananthu.BookHub.model.BookBuilder;
+import com.example.ananthu.BookHub.network.GoodreadRequest;
+import com.example.ananthu.BookHub.network.SuccessFailedCallback;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.ananthu.BookHub.adapters.AuthorRecyclerViewAdapter;
@@ -54,6 +55,7 @@ public class BookViewActivity extends AppCompatActivity implements CompoundButto
         setContentView(R.layout.activity_book_view);
         cache = InternalStorage.getInstance();
         book = (Book) getIntent().getSerializableExtra("book");
+
 
         List<Author> authorList = book.getAuthors();
         authorRecyclerView = findViewById(R.id.recycler_view);
@@ -115,14 +117,13 @@ public class BookViewActivity extends AppCompatActivity implements CompoundButto
         url.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(book.getUrl()));
             startActivity(browserIntent);
+
         });
 
         ToggleButton fav = findViewById(R.id.favorite_toggle);
         fav.setOnCheckedChangeListener(this);
         if (cache.isFavorite(book.getId())) {
             fav.setChecked(true);
-            fav.setCompoundDrawablesWithIntrinsicBounds
-                    (R.drawable.ic_baseline_stars_gold_14px, 0, 0, 0);
         }
     }
 

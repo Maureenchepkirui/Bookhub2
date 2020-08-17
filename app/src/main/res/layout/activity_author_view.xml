@@ -80,27 +80,6 @@
                 android:textOn="About"
                 android:checked="true"/>
 
-            <TextView
-                android:id="@+id/webAbout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingEnd="20dp"
-                android:paddingStart="37dp"
-                android:text="TextView"
-                android:visibility="visible"/>
-
-
-            <ToggleButton
-                android:id="@+id/bookToggle"
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_keyboard_arrow_down_24px"
-                android:textAlignment="viewStart"
-                android:textOff="Related Books"
-                android:textOn="Related Books"
-                android:checked="true"/>
-
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"

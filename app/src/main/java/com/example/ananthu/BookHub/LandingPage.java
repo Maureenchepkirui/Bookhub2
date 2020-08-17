@@ -63,13 +63,21 @@ public class LandingPage extends AppCompatActivity {
         mGoodreadRequest = new GoodreadRequest(getString(R.string.GR_API_Key), this);
 
         FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SearchActivity.class)));
+
+
     }
 
     @Override
     protected void onResume() {
         loadFavBooks();
         super.onResume();
+        Toast.makeText(
+                getApplicationContext(),
+                "Reading List",
+                Toast.LENGTH_SHORT
+        ).show();
     }
 
     private void loadFavBooks() {

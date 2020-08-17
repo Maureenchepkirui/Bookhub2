@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.example.ananthu.BookHub.LandingPage"
-            android:label="BOOKHUB READINGLIST"
+            android:label="BOOKHUB"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name="com.example.ananthu.BookHub.BookViewActivity"
-            android:label="@string/title_activity_book_view">
+            android:label="BOOKVIEW">
         </activity>
         <activity android:name="com.example.ananthu.BookHub.AuthorViewActivity">
         </activity>

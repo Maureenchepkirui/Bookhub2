@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Coral"
     tools:context="com.example.ananthu.BookHub.BookViewActivity">
 
     <ScrollView
@@ -87,10 +88,9 @@
                         android:textColor="@drawable/fav_selector"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textOn="ADD TO READINGLIST"
                         android:textOff="ADD TO READINGLIST"
+                        android:textOn="REMOVE FROM READINGLIST"
                         android:textAlignment="viewStart"
-                        android:drawableStart="@drawable/ic_baseline_stars_grey_14px"
                         android:minHeight="0dp"
                         android:minWidth="0dp"
                         />
@@ -218,7 +218,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:background="@color/LightGrey"/>
+                    android:background="@color/LightSeaGreen"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"

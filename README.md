@@ -6,8 +6,19 @@ An android application that consumes Goodreads API to display books,authors,book
 ```
 MAUREEN CHEPKIRUI BETT
 ```
-## TECHNOLOGIES
+## FEATURES
+```
+-Search for books
+-View book description
+-View author about and other related books
+-View book Reviews
+-Create a personal reading-list
+-Link to navigate to Goodreads
+```
 
+
+## TECHNOLOGIES
+```
 Gradle
 
 Java 1.8
@@ -15,33 +26,39 @@ Java 1.8
 Android
 
 Goodreads API
+```
 
 ## LIBRARIES
-
+```
 Picasso - For image loading
 
 XmlPullParser - XML parsing
 
 Volley - Network Library
+```
 
 ## SETUP
-
+```
 Clone repo
 
 Import it to Android Studio
 
 Set up  Emulator or physical device
+```
 
 ## BUGS
-
-Could not implement retrofit so used volley insted
+```
+Could not implement retrofit so used volley instead
+```
 
 ## CONTACTS
-
+```
 For any clarification contact me on `maureenchepkirui005@gmail.com`
+```
 
 ## LICENCE
-
+```
 MIT Licence copyright Maureen Chepkirui 2020
+```
 
 

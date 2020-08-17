@@ -60,13 +60,11 @@ public class AuthorViewActivity extends AppCompatActivity implements CompoundBut
         bookRecyclerViewAdapter = new BookRecyclerViewAdapter(books);
         authorRecyclerView.setAdapter(bookRecyclerViewAdapter);
 
-        webAbout = findViewById(R.id.webAbout);
-        ToggleButton aboutToggle = findViewById(R.id.aboutToggle);
-        ToggleButton bookToggle = findViewById(R.id.bookToggle);
 
+        ToggleButton aboutToggle = findViewById(R.id.aboutToggle);
 
         aboutToggle.setOnCheckedChangeListener(this);
-        bookToggle.setOnCheckedChangeListener(this);
+
 
 
         mGoodreadRequest = new GoodreadRequest(getString(R.string.GR_API_Key), this);

@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3;
+package com.example.ananthu.BookHub;
 
 import android.Manifest;
 import android.content.Intent;
@@ -14,15 +14,14 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.ananthu.getbooks3.adapters.BookRecyclerViewAdapter;
-import com.example.ananthu.getbooks3.model.Book;
-import com.example.ananthu.getbooks3.model.BookBuilder;
-import com.example.ananthu.getbooks3.network.GoodreadRequest;
-import com.example.ananthu.getbooks3.network.SuccessFailedCallback;
-import com.example.ananthu.getbooks3.search.SearchActivity;
+import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
+import com.example.ananthu.BookHub.model.Book;
+import com.example.ananthu.BookHub.model.BookBuilder;
+import com.example.ananthu.BookHub.network.GoodreadRequest;
+import com.example.ananthu.BookHub.network.SuccessFailedCallback;
+import com.example.ananthu.BookHub.search.SearchActivity;
 
 import java.util.ArrayList;
 import java.util.List;

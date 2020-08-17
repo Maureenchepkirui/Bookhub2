@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3.model;
+package com.example.ananthu.BookHub.model;
 
 import android.util.Log;
 
@@ -18,7 +18,7 @@ public class AuthorBuilder {
     /**
      * Get a list of authors of a book.
      *
-     * @param xmlString XML response string of a book from {@link com.example.ananthu.getbooks3.network.GoodreadRequest#getBook(Integer, SuccessFailedCallback)} API
+     * @param xmlString XML response string of a book from {@link com.example.ananthu.BookHub.network.GoodreadRequest#getBook(Integer, SuccessFailedCallback)} API
      * @return A list of the book's authors
      */
     public static List<Author> getAuthorsUsingBookAPI(String xmlString) {
@@ -108,7 +108,7 @@ public class AuthorBuilder {
      * Used to get some additional details about an author.
      * (Author objects built from book XML will not have author summary)
      *
-     * @param xmlString XML string from the {@link com.example.ananthu.getbooks3.network.GoodreadRequest#getAuthor(Integer, SuccessFailedCallback)} API
+     * @param xmlString XML string from the {@link com.example.ananthu.BookHub.network.GoodreadRequest#getAuthor(Integer, SuccessFailedCallback)} API
      * @param author an existing {@link Author} object to store the details in.
      * @return Updated Author object
      */

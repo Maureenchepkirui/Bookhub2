@@ -1,4 +1,4 @@
-package com.example.ananthu.getbooks3.adapters;
+package com.example.ananthu.BookHub.adapters;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -11,8 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import com.example.ananthu.getbooks3.R;
-import com.example.ananthu.getbooks3.util.CircleTransform;
+import com.example.ananthu.BookHub.R;
+import com.example.ananthu.BookHub.util.CircleTransform;
 
 import com.squareup.picasso.Picasso;
 
@@ -21,16 +21,16 @@ import java.util.List;
 public class AuthorRecyclerViewAdapter extends RecyclerView.Adapter<AuthorRecyclerViewAdapter.AuthorViewHolder> {
     private static final String TAG = AuthorRecyclerViewAdapter.class.getName();
 
-    private final List<com.example.ananthu.getbooks3.model.Author> authorList;
+    private final List<com.example.ananthu.BookHub.model.Author> authorList;
 
-    public AuthorRecyclerViewAdapter(List<com.example.ananthu.getbooks3.model.Author> authorList) {
+    public AuthorRecyclerViewAdapter(List<com.example.ananthu.BookHub.model.Author> authorList) {
         this.authorList = authorList;
     }
 
     @Override
     public void onBindViewHolder(AuthorViewHolder holder, int position) {
 
-        final com.example.ananthu.getbooks3.model.Author a = authorList.get(position);
+        final com.example.ananthu.BookHub.model.Author a = authorList.get(position);
         holder.name.setText(a.getName());
         Picasso.get()
                 .load(a.getImg())
@@ -38,7 +38,7 @@ public class AuthorRecyclerViewAdapter extends RecyclerView.Adapter<AuthorRecycl
                 .into(holder.image);
 
         holder.row.setOnClickListener(v -> {
-            Intent i = new Intent(v.getContext(), com.example.ananthu.getbooks3.AuthorViewActivity.class);
+            Intent i = new Intent(v.getContext(), com.example.ananthu.BookHub.AuthorViewActivity.class);
             Log.d(TAG, "onBindViewHolder: onClick" + a.getImg());
             i.putExtra("author", a);
             v.getContext().startActivity(i);

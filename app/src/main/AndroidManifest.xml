@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.ananthu.getbooks3">
+          package="com.example.ananthu.BookHub">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LandingPage"
+            android:name="com.example.ananthu.BookHub.LandingPage"
             android:label="BOOKHUB"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,12 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BookViewActivity"
+            android:name="com.example.ananthu.BookHub.BookViewActivity"
             android:label="@string/title_activity_book_view">
         </activity>
-        <activity android:name=".AuthorViewActivity">
+        <activity android:name="com.example.ananthu.BookHub.AuthorViewActivity">
         </activity>
-        <activity android:name=".search.SearchActivity">
+        <activity android:name="com.example.ananthu.BookHub.search.SearchActivity">
         </activity>
 
         <meta-data

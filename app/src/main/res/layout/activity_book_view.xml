@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ananthu.getbooks3.BookViewActivity">
+    tools:context="com.example.ananthu.BookHub.BookViewActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -13,6 +13,7 @@ public interface SuccessFailedCallback {
      */
     void success(String response);
 
+
     /**
      * Called when the network call fails
      */

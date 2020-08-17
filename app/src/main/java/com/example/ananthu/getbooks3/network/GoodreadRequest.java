@@ -11,7 +11,7 @@ import com.android.volley.toolbox.Volley;
 
 public class GoodreadRequest {
     private static final String TAG = GoodreadRequest.class.getName();
-
+//setting up a request queue
     private final RequestQueue requestQueue;
 
     /**

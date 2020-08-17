@@ -2,7 +2,6 @@ package com.example.ananthu.getbooks3.model;
 
 import android.util.Log;
 
-import com.example.ananthu.getbooks3.network.SuccessFailedCallback;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

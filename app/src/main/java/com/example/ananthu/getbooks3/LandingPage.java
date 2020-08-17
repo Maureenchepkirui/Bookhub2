@@ -61,7 +61,6 @@ public class LandingPage extends AppCompatActivity {
 
         requestInternetPermission();
 
-
         mGoodreadRequest = new GoodreadRequest(getString(R.string.GR_API_Key), this);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -149,8 +148,8 @@ public class LandingPage extends AppCompatActivity {
             case INTERNET_PERMISSION: {
                 if (grantResults.length <= 0
                         || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                            Toast.makeText(this, "Internet Access denied", Toast.LENGTH_SHORT).show();
-                        }
+                    Toast.makeText(this, "Internet Access denied", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }

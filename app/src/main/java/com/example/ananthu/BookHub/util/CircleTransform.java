@@ -8,6 +8,10 @@ import android.graphics.Paint;
 import com.squareup.picasso.Transformation;
 
 /**
+ * Created by Maureen Bett on 16/8/20.
+ */
+
+/**
  * A transformation filter for {@link com.squareup.picasso.RequestCreator#transform(Transformation)}
  * This filter crops an image into a circle
  */

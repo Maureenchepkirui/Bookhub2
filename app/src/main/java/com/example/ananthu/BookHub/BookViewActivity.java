@@ -1,8 +1,10 @@
 package com.example.ananthu.BookHub;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,7 +31,8 @@ import java.util.List;
 
 public class BookViewActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private static final String TAG = BookViewActivity.class.getName();
-
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
     private Book book;
     private TextView txtHeader;
     private TextView txtFooter;
@@ -125,7 +128,14 @@ public class BookViewActivity extends AppCompatActivity implements CompoundButto
         if (cache.isFavorite(book.getId())) {
             fav.setChecked(true);
         }
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        if (mRecentAddress != null) {
+            setTitle(mRecentAddress);
+        }
     }
+
+
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

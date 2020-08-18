@@ -18,6 +18,8 @@ import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
 import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.Book;
 import com.example.ananthu.BookHub.network.GoodreadRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,8 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
     private static final String TAG = SearchActivity.class.getName();
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
-    private Book book;
+    private DatabaseReference mSearchedBookReference;
+
     private List<Book> books = new ArrayList<>();
     private GoodreadRequest mGoodreadRequest;
     private BookRecyclerViewAdapter bookRecyclerViewAdapter;
@@ -39,6 +42,10 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mSearchedBookReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_CHILD_SEARCHED_BOOK);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         cache = InternalStorage.getInstance();
@@ -66,6 +73,8 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
         bookSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                String book =query;
+                saveBookToFirebase(book);
                 loadingIcon.setVisibility(View.VISIBLE);
                 bookRecyclerView.setVisibility(View.GONE);
                 bookRecyclerViewAdapter.clear();
@@ -73,8 +82,11 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
                 return false;
 
             }
-
+            public void saveBookToFirebase(String book) {
+                mSearchedBookReference.setValue(book);
+            }
             private void addToSharedPreferences(String book) {
+                addToSharedPreferences(book);
                 mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, book).apply();
 
             }

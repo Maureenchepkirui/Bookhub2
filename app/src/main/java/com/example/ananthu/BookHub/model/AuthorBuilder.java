@@ -3,6 +3,8 @@ package com.example.ananthu.BookHub.model;
 import android.util.Log;
 
 
+import com.example.ananthu.BookHub.network.SuccessFailedCallback;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -18,7 +20,7 @@ public class AuthorBuilder {
     /**
      * Get a list of authors of a book.
      *
-     * @param xmlString XML response string of a book from {@link com.example.ananthu.BookHub.network.GoodreadRequest#getBook(Integer, SuccessFailedCallback)} API
+     * @param xmlString XML response from {@link com.example.ananthu.BookHub.network.GoodreadRequest#getBook(Integer, SuccessFailedCallback)} API
      * @return A list of the book's authors
      */
     public static List<Author> getAuthorsUsingBookAPI(String xmlString) {

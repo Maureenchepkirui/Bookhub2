@@ -23,6 +23,8 @@ import android.widget.ToggleButton;
 import com.example.ananthu.BookHub.adapters.AuthorRecyclerViewAdapter;
 import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.Book;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 
@@ -134,9 +136,6 @@ public class BookViewActivity extends AppCompatActivity implements CompoundButto
             setTitle(mRecentAddress);
         }
     }
-
-
-
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
@@ -150,8 +149,15 @@ public class BookViewActivity extends AppCompatActivity implements CompoundButto
             } else if (buttonView.getId() == R.id.authorToggle) {
                 authorRecyclerView.setVisibility(View.VISIBLE);
             } else if (buttonView.getId() == R.id.favorite_toggle) {
+                DatabaseReference bookRef = FirebaseDatabase
+                        .getInstance()
+                        .getReference(Constants.FIREBASE_CHILD_BOOKS);
+                bookRef.push().setValue(book);
+                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
                 buttonView.setCompoundDrawablesWithIntrinsicBounds
                         (R.drawable.ic_baseline_stars_gold_14px, 0, 0, 0);
+
+
 
                 if (!cache.isFavorite(book.getId())) {
                     cache.addToFavList(book.getId());

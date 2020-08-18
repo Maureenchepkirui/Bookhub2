@@ -98,10 +98,7 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
         loadingIcon.setVisibility(View.GONE);
         bookRecyclerView.setVisibility(View.VISIBLE);
         bookRecyclerViewAdapter.add(book);
-        Toast.makeText(
-                getApplicationContext(),
-                "showing results",
-                Toast.LENGTH_SHORT).show();
+       
     }
 
     @Override

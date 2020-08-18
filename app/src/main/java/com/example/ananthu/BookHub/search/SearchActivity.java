@@ -1,6 +1,8 @@
 package com.example.ananthu.BookHub.search;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,18 +11,23 @@ import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.ananthu.BookHub.Constants;
 import com.example.ananthu.BookHub.InternalStorage;
 import com.example.ananthu.BookHub.R;
 import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
+import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.Book;
 import com.example.ananthu.BookHub.network.GoodreadRequest;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SearchActivity extends AppCompatActivity implements com.example.ananthu.BookHub.search.SearchView {
     private static final String TAG = SearchActivity.class.getName();
-
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private Book book;
     private List<Book> books = new ArrayList<>();
     private GoodreadRequest mGoodreadRequest;
     private BookRecyclerViewAdapter bookRecyclerViewAdapter;
@@ -37,6 +44,10 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
         cache = InternalStorage.getInstance();
         mGoodreadRequest = new GoodreadRequest(getString(R.string.GR_API_Key), this);
         searchPresenter = new SearchPresenter(this);
+
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
         bookRecyclerView = findViewById(R.id.book_recycler_view);
         loadingIcon = findViewById(R.id.loading_icon);
@@ -60,6 +71,12 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
                 bookRecyclerViewAdapter.clear();
                 searchPresenter.searchQuery(query, mGoodreadRequest, cache);
                 return false;
+
+            }
+
+            private void addToSharedPreferences(String book) {
+                mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, book).apply();
+
             }
 
             @Override
@@ -77,9 +94,14 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
 
     @Override
     public void showBookResult(Book book) {
+       
         loadingIcon.setVisibility(View.GONE);
         bookRecyclerView.setVisibility(View.VISIBLE);
         bookRecyclerViewAdapter.add(book);
+        Toast.makeText(
+                getApplicationContext(),
+                "showing results",
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override

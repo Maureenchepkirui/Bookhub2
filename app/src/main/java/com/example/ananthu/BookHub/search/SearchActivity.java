@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
@@ -18,8 +19,11 @@ import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
 import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.Book;
 import com.example.ananthu.BookHub.network.GoodreadRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +43,7 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
     private ProgressBar loadingIcon;
     private InternalStorage cache;
     private SearchPresenter searchPresenter;
+    private ValueEventListener mSearchedBookReferenceListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,22 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
                 .getInstance()
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_BOOK);
+        mSearchedBookReferenceListener = mSearchedBookReference.addValueEventListener(new ValueEventListener() { //attach listener
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) { //something changed!
+                for (DataSnapshot bookSnapshot : dataSnapshot.getChildren()) {
+                    String book = bookSnapshot.getValue().toString();
+                    Log.d("Books updated", "book: " + book); //log
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) { //update UI here if error occurred.
+
+            }
+
+        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         cache = InternalStorage.getInstance();
@@ -70,6 +91,8 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
         bookRecyclerView.setAdapter(bookRecyclerViewAdapter);
 
         bookSearch = findViewById(R.id.book_search);
+
+
         bookSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -79,14 +102,18 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
                 bookRecyclerView.setVisibility(View.GONE);
                 bookRecyclerViewAdapter.clear();
                 searchPresenter.searchQuery(query, mGoodreadRequest, cache);
+                addToSharedPreferences(book);
+                if(!(book).equals("")) {
+                    addToSharedPreferences(book);
+                }
                 return false;
 
             }
+
             public void saveBookToFirebase(String book) {
                 mSearchedBookReference.setValue(book);
             }
             private void addToSharedPreferences(String book) {
-                addToSharedPreferences(book);
                 mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, book).apply();
 
             }
@@ -116,5 +143,11 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
     @Override
     public void showToast(String t) {
         Toast.makeText(this, t, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSearchedBookReference.removeEventListener(mSearchedBookReferenceListener);
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ananthu.BookHub.ui.LoginActivity"
-    android:background="@color/MediumVioletRed">
+    android:background="@color/OrangeRed">
 
     <LinearLayout
         android:orientation="vertical"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@color/Purple"
-            android:fontFamily="@font/asset"
+            android:fontFamily="@font/creepster"
             android:padding="10dp"
             android:text="Log in"
             android:textColor="@color/colorTextIcons" />
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:fontFamily="@font/asset"
+        android:fontFamily="@font/creepster"
         android:text="Login"
         android:textColor="@color/colorPrimaryLight"
         android:textSize="30dp"

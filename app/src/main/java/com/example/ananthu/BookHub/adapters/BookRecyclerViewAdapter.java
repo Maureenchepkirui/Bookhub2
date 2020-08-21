@@ -3,7 +3,7 @@ package com.example.ananthu.BookHub.adapters;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
+
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -14,7 +14,9 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.ananthu.BookHub.BookViewActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ananthu.BookHub.ui.BookViewActivity;
 import com.example.ananthu.BookHub.R;
 import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.Book;

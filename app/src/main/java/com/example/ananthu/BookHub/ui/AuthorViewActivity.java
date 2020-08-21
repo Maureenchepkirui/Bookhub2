@@ -1,9 +1,6 @@
-package com.example.ananthu.BookHub;
+package com.example.ananthu.BookHub.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ananthu.BookHub.R;
 import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
 import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.AuthorBuilder;

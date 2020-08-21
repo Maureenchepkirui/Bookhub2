@@ -5,7 +5,7 @@ import com.example.ananthu.BookHub.model.Book;
 import com.example.ananthu.BookHub.util.Toastable;
 
 
-interface SearchView extends Toastable {
+public interface SearchView extends Toastable {
 
     /**
      * Adds a book relevant to the search query

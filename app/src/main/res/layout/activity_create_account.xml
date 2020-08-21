@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ananthu.BookHub.ui.CreateAccountActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/MediumVioletRed">
 
     <LinearLayout
         android:orientation="vertical"
@@ -76,10 +76,11 @@
             android:id="@+id/createUserButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/Purple"
+            android:fontFamily="@font/asset"
             android:padding="10dp"
             android:text="Sign up"
-            android:background="@color/colorAccent"
-            android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons" />
 
         <TextView
@@ -98,11 +99,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/asset"
         android:text="Create Account"
         android:textColor="@color/colorPrimaryLight"
         android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

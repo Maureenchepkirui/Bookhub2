@@ -2,7 +2,7 @@ package com.example.ananthu.BookHub.search;
 
 import android.util.Log;
 
-import com.example.ananthu.BookHub.InternalStorage;
+import com.example.ananthu.BookHub.ui.InternalStorage;
 import com.example.ananthu.BookHub.model.Book;
 import com.example.ananthu.BookHub.model.BookBuilder;
 import com.example.ananthu.BookHub.network.GoodreadRequest;
@@ -17,7 +17,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
-class SearchPresenter {
+public class SearchPresenter {
     private static final String TAG = SearchPresenter.class.getName();
 
     private final SearchView searchView;

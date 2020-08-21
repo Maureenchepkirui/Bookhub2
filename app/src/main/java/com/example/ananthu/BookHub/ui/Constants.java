@@ -1,4 +1,4 @@
-package com.example.ananthu.BookHub;
+package com.example.ananthu.BookHub.ui;
 
 public class Constants {
     public static final String PREFERENCES_LOCATION_KEY = "book";

@@ -1,7 +1,7 @@
 package com.example.ananthu.BookHub.adapters;
 
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.ananthu.BookHub.R;
+import com.example.ananthu.BookHub.ui.AuthorViewActivity;
 import com.example.ananthu.BookHub.util.CircleTransform;
 
 import com.squareup.picasso.Picasso;
@@ -38,7 +41,7 @@ public class AuthorRecyclerViewAdapter extends RecyclerView.Adapter<AuthorRecycl
                 .into(holder.image);
 
         holder.row.setOnClickListener(v -> {
-            Intent i = new Intent(v.getContext(), com.example.ananthu.BookHub.AuthorViewActivity.class);
+            Intent i = new Intent(v.getContext(), AuthorViewActivity.class);
             Log.d(TAG, "onBindViewHolder: onClick" + a.getImg());
             i.putExtra("author", a);
             v.getContext().startActivity(i);

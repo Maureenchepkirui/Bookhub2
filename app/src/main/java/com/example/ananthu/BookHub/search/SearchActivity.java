@@ -3,22 +3,23 @@ package com.example.ananthu.BookHub.search;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.ananthu.BookHub.Constants;
-import com.example.ananthu.BookHub.InternalStorage;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+
 import com.example.ananthu.BookHub.R;
 import com.example.ananthu.BookHub.adapters.BookRecyclerViewAdapter;
-import com.example.ananthu.BookHub.model.Author;
 import com.example.ananthu.BookHub.model.Book;
 import com.example.ananthu.BookHub.network.GoodreadRequest;
+import com.example.ananthu.BookHub.ui.Constants;
+import com.example.ananthu.BookHub.ui.InternalStorage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -133,11 +134,11 @@ public class SearchActivity extends AppCompatActivity implements com.example.ana
 
     @Override
     public void showBookResult(Book book) {
-       
+
         loadingIcon.setVisibility(View.GONE);
         bookRecyclerView.setVisibility(View.VISIBLE);
         bookRecyclerViewAdapter.add(book);
-       
+
     }
 
     @Override
